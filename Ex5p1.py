@@ -1,4 +1,3 @@
-#5 задание номер 1
 def isPalindrome(str):
 
     for i in range(0, int(len(str)/2)):
