@@ -7,5 +7,5 @@ else:
     while a <= b:
         if b % 2 == 0:
             x = x+1
-            b= b - 1
+    b= b - 1
     print ("количество целых числе:", x)
