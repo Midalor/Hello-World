@@ -1,17 +1,19 @@
-a = []
-b = []
-n = int(input("Введите количество рыбаков:"))
 m = int(input("Введите максимальную массу которую может выдержать лодка:"))
-for AI in range(n):
-    a.append(int(input("Введите вес каждого путешественника:")))
-for x in range(len(a)):
-    if a[x] + min(a) <= m:
-        b += [[a[x], min(a)]]
-        a[x] += m
-        a[a.index(min(a))] += m
+n = int(input("Введите количество рыбаков:"))
+a = list(map(int, input("Введите вес путешественника:").split()))
+a.sort()
+
+i = 0
+j = 0
+boats = 0
+
+while i < n:
+    if a[i] + a[j] <= m and j < n:
+        j += 1
     else:
-        if a[x] > m:
-            continue
-        else:
-            b += [[a[x]]]
-print(len(b))
+        boats += 1
+        j = 0
+    i += 1
+
+boats += 1
+print("Количество лодок:", boats)
