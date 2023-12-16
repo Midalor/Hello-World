@@ -8,12 +8,15 @@ j = 0
 boats = 0
 
 while i < n:
-    if a[i] + a[j] <= m and j < n:
+    if a[i] + a[j+1] <= m and j <= n:
         j += 1
     else:
         boats += 1
         j = 0
     i += 1
-
+    
 boats += 1
-print("Количество лодок:", boats)
+if n //1.9 > boats:
+    print(n//1.9)
+else:
+    print("Количество лодок:", boats)
